@@ -1,4 +1,4 @@
-const {app, ipcMain} = require('electron')
+const {app, ipcMain, dialog} = require('electron')
 const AppWindow = require('./utils/AppWindow')
 
 app.on('ready', () => {
@@ -10,6 +10,14 @@ app.on('ready', () => {
       height: 400,
       parent: mainWindow
     }, './renderer/add.html')
+  })
+  ipcMain.on('open-music-file', (event, arg) => {
+    dialog.showOpenDialog({
+      properties: ['openFile', 'multiSelections'],
+      filters: [{name: 'Music', extensions: ['mp3']}]
+    }, files => {
+      console.log(files)
+    })
   })
 
 })
