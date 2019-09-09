@@ -10,13 +10,21 @@ app.on('ready', () => {
       nodeIntegration: true
     }
   })
-  ipcMain.on('message', (event, arg) => {
-    console.log(arg)
-    mainWindow.send('reply', 'reply from main')
-    // event.sender.send('reply','reply from main')
-  })
-  mainWindow.loadFile('index.html')
+  mainWindow.loadFile('./renderer/index.html')
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
   })
+
+  ipcMain.on('add-music-window', (event, arg) => {
+    const addWindow = new BrowserWindow({
+      width: 500,
+      height: 400,
+      webPreferences: {
+        nodeIntegration: true
+      },
+      parent:mainWindow
+    })
+    addWindow.loadFile('./renderer/add.html')
+  })
+
 })
