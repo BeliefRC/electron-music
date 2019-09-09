@@ -1,0 +1,21 @@
+{
+  "name": "electron-quick-start",
+  "version": "1.0.0",
+  "description": "A minimal Electron music application",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon --watch main.js --exec \"electron .\""
+  },
+  "repository": "https://github.com/BeliefRC/electron-music.git",
+  "keywords": [
+    "Electron"
+  ],
+  "author": "BNeliefRc",
+  "devDependencies": {
+    "electron": "^6.0.7",
+    "nodemon": "^1.19.2"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  }
+}
