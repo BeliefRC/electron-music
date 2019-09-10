@@ -16,7 +16,8 @@ app.on('ready', () => {
       properties: ['openFile', 'multiSelections'],
       filters: [{name: 'Music', extensions: ['mp3']}]
     }, files => {
-      console.log(files)
+      if (files)
+        event.sender.send('selected-file',files)
     })
   })
 
