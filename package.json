@@ -4,7 +4,7 @@
   "description": "A minimal Electron music application",
   "main": "main.js",
   "scripts": {
-    "start": "nodemon --watch main.js --exec \"electron .\""
+    "start": "nodemon --exec \"electron .\""
   },
   "repository": "https://github.com/BeliefRC/electron-music.git",
   "keywords": [
@@ -13,6 +13,7 @@
   "author": "BeliefRc",
   "devDependencies": {
     "electron": "^6.0.7",
+    "electron-builder": "^21.2.0",
     "nodemon": "^1.19.2"
   },
   "dependencies": {

@@ -1,6 +1,6 @@
 {
-  "id": "",
-  "name": "",
+  "id": "1431379",
+  "name": "electron-music",
   "font_family": "iconfont",
   "css_prefix_text": "icon-",
   "description": "",
@@ -20,11 +20,11 @@
       "unicode_decimal": 59152
     },
     {
-      "icon_id": "6399654",
+      "icon_id": "6282792",
       "name": "暂停",
-      "font_class": "weibiaoti--",
-      "unicode": "e60f",
-      "unicode_decimal": 58895
+      "font_class": "zanting",
+      "unicode": "e6c2",
+      "unicode_decimal": 59074
     },
     {
       "icon_id": "10721332",

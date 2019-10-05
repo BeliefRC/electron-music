@@ -10,6 +10,7 @@ app.on('ready', () => {
     const updatedTracks = myStore.getTracks()
     mainWindow.send('getTracks', updatedTracks)
   })
+  // 弹出添加音乐弹窗
   ipcMain.on('add-music-window', (event, arg) => {
     const addWindow = new AppWindow({
       width: 500,
@@ -17,6 +18,7 @@ app.on('ready', () => {
       parent: mainWindow
     }, './renderer/add.html')
   })
+  // 弹出系统文件选择框
   ipcMain.on('open-music-file', (event, arg) => {
     dialog.showOpenDialog({
       properties: ['openFile', 'multiSelections'],
@@ -26,9 +28,15 @@ app.on('ready', () => {
         event.sender.send('selected-file', files)
     })
   })
-  ipcMain.on('add-tracks', (event, tracks) => {
-    console.log('on add-tracks')
+  // 点击确定添加音乐后保存音乐数据
+  ipcMain.on('add-tracks',
+    (event, tracks) => {
     const updatedTracks = myStore.addTracks(tracks).getTracks()
     mainWindow.send('getTracks', updatedTracks)
+  })
+  ipcMain.on('delete-track',
+    (event, id) => {
+      const updatedTracks = myStore.deleteTrack(id).getTracks()
+      mainWindow.send('getTracks', updatedTracks)
   })
 })
