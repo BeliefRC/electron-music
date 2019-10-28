@@ -4,7 +4,18 @@
   "description": "A minimal Electron music application",
   "main": "main.js",
   "scripts": {
-    "start": "nodemon --exec \"electron .\""
+    "start": "nodemon --exec \"electron .\"",
+    "dist": "electron-builder --win --x64"
+  },
+  "build": {
+    "appId": "com.xxx.app",
+    "productName": "rc-music-player",
+    "mac": {
+      "target": ["dmg","zip"]
+    },
+    "win": {
+      "target": ["nsis","zip"]
+    }
   },
   "repository": "https://github.com/BeliefRC/electron-music.git",
   "keywords": [
